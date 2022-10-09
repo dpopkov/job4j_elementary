@@ -23,4 +23,24 @@ public class FindLoopTest {
         int expected = -1;
         assertEquals(expected, result);
     }
+
+    @Test
+    public void whenElementIsInRangeThenReturnIndex() {
+        int[] data = new int[] {5, 2, 10, 2, 4};
+        int element = 2;
+        int start = 2;
+        int finish = 4;
+        int expected = 3;
+        assertEquals(expected, FindLoop.indexInRange(data, element, start, finish));
+    }
+
+    @Test
+    public void whenElementIsNotInRangeThenReturnMinusOne() {
+        int[] data = new int[] {5, 2, 10, 2, 4};
+        int element = 8;
+        int start = 2;
+        int finish = 4;
+        int expected = -1;
+        assertEquals(expected, FindLoop.indexInRange(data, element, start, finish));
+    }
 }
